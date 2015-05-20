@@ -1,4 +1,4 @@
-package com.company;
+package de.haw.cip;
 
 public class Main {
 

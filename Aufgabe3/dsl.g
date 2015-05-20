@@ -5,17 +5,17 @@ options {
   ASTLabelType=CommonTree;
 }
 
-
 tokens{
   RESULT; 
   BLOCK;
 }
 
-riddle	:	b11=block op1=OP b12=block EQUAL b13=block
-                op21=OP    op22=OP   op23= OP
-               b31= block op3=OP b32= block EQUAL b33=block
+
+riddle	:	b11=block op1=op b12=block EQUAL b13=block
+                op21=op    op22=op   op23= op
+               b31= block op3=op b32= block EQUAL b33=block
                 EQUAL	EQUAL	EQUAL	
-               b51= block op5=OP b52=block EQUAL b53=block
+               b51= block op5=op b52=block EQUAL b53=block
                 ->
                   ^(EQUAL ^($op1 $b11 $b12) $b13  )
                    ^(EQUAL ^($op3  $b31  $b32 ) $b33  )
@@ -29,9 +29,11 @@ riddle	:	b11=block op1=OP b12=block EQUAL b13=block
 
 
 block	: 	SYMBOL+  -> ^(BLOCK SYMBOL*);
+op	:	ADD | SUB;
 
 SYMBOL	:	('A'..'Z');
-OP	:	'+'|'-';
+ADD	:	'+';
+SUB	:	'-';
 EQUAL	: 	'=';
 
 
