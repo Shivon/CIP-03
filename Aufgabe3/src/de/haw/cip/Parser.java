@@ -11,7 +11,7 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 
 class Parser {
 	public static void main(String args[]) throws Exception {
-		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/Timo/workspace/CIP-Aufgabe3/ANTL/test.txt", "UTF8"));
+		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/Timo/Desktop/CIP3/Aufgabe3/ANTL/test.txt", "UTF8"));
 		CommonTokenStream tokens = new CommonTokenStream(lex);
 		
 		DSLParser parser = new DSLParser(tokens);

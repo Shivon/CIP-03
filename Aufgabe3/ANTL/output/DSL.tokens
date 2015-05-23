@@ -5,3 +5,4 @@ RESULT=7
 SUB=8
 SYMBOL=9
 WS=10
+'='=6
