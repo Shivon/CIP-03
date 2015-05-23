@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g 2015-05-23 17:37:32
+// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g 2015-05-23 17:59:38
 package output;
 
 import org.antlr.runtime.*;
@@ -34,7 +34,7 @@ public class DSLWalker extends DebugTreeParser {
 
 
 public static final String[] ruleNames = new String[] {
-    "invalidRule", "riddle", "exercise", "block"
+    "invalidRule", "block", "riddle", "exercise"
 };
 
 public static final boolean[] decisionCanBacktrack = new boolean[] {
@@ -469,7 +469,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     // AST REWRITE
-                    // elements: EQUAL, bl2, bl3, bl1
+                    // elements: EQUAL, bl2, bl1, bl3
                     // token labels: 
                     // rule labels: bl1, bl3, bl2, retval
                     // token list labels: 
@@ -556,7 +556,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "block"
-    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:1: block : ^( BLOCK ( SYMBOL )* ) ;
+    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:1: block : ^( BLOCK ( SYMBOL )+ ) ;
     public final DSLWalker.block_return block() throws RecognitionException {
         DSLWalker.block_return retval = new DSLWalker.block_return();
         retval.start = input.LT(1);
@@ -579,10 +579,10 @@ public TreeAdaptor getTreeAdaptor() {
         dbg.location(19, 0);
 
         try {
-            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:8: ( ^( BLOCK ( SYMBOL )* ) )
+            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:8: ( ^( BLOCK ( SYMBOL )+ ) )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:11: ^( BLOCK ( SYMBOL )* )
+            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:11: ^( BLOCK ( SYMBOL )+ )
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -602,53 +602,58 @@ public TreeAdaptor getTreeAdaptor() {
             root_1 = (CommonTree)adaptor.becomeRoot(BLOCK14_tree, root_1);
 
 
-            if ( input.LA(1)==Token.DOWN ) {
-                match(input, Token.DOWN, null); 
-                dbg.location(19,19);
-                // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:19: ( SYMBOL )*
-                try { dbg.enterSubRule(2);
+            match(input, Token.DOWN, null); 
+            dbg.location(19,19);
+            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:19: ( SYMBOL )+
+            int cnt2=0;
+            try { dbg.enterSubRule(2);
 
-                loop2:
-                do {
-                    int alt2=2;
-                    try { dbg.enterDecision(2, decisionCanBacktrack[2]);
+            loop2:
+            do {
+                int alt2=2;
+                try { dbg.enterDecision(2, decisionCanBacktrack[2]);
 
-                    int LA2_0 = input.LA(1);
+                int LA2_0 = input.LA(1);
 
-                    if ( (LA2_0==SYMBOL) ) {
-                        alt2=1;
-                    }
-
-
-                    } finally {dbg.exitDecision(2);}
-
-                    switch (alt2) {
-                	case 1 :
-                	    dbg.enterAlt(1);
-
-                	    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:19: SYMBOL
-                	    {
-                	    dbg.location(19,19);
-                	    _last = (CommonTree)input.LT(1);
-                	    SYMBOL15=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_block141); 
-                	    SYMBOL15_tree = (CommonTree)adaptor.dupNode(SYMBOL15);
+                if ( (LA2_0==SYMBOL) ) {
+                    alt2=1;
+                }
 
 
-                	    adaptor.addChild(root_1, SYMBOL15_tree);
+                } finally {dbg.exitDecision(2);}
+
+                switch (alt2) {
+            	case 1 :
+            	    dbg.enterAlt(1);
+
+            	    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:19: SYMBOL
+            	    {
+            	    dbg.location(19,19);
+            	    _last = (CommonTree)input.LT(1);
+            	    SYMBOL15=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_block141); 
+            	    SYMBOL15_tree = (CommonTree)adaptor.dupNode(SYMBOL15);
 
 
-                	    }
-                	    break;
-
-                	default :
-                	    break loop2;
-                    }
-                } while (true);
-                } finally {dbg.exitSubRule(2);}
+            	    adaptor.addChild(root_1, SYMBOL15_tree);
 
 
-                match(input, Token.UP, null); 
-            }
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt2 >= 1 ) break loop2;
+                        EarlyExitException eee =
+                            new EarlyExitException(2, input);
+                        dbg.recognitionException(eee);
+
+                        throw eee;
+                }
+                cnt2++;
+            } while (true);
+            } finally {dbg.exitSubRule(2);}
+
+
+            match(input, Token.UP, null); 
             adaptor.addChild(root_0, root_1);
             _last = _save_last_1;
             }
