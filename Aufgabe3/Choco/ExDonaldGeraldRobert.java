@@ -35,7 +35,7 @@ public class ExDonaldGeraldRobert {
 				IntegerVariable u3 = Choco.makeIntVar("u3", 0, 1, new String[]{Options.V_ENUM});
 				IntegerVariable u4 = Choco.makeIntVar("u4", 0, 1, new String[]{Options.V_ENUM});
 				IntegerVariable u5 = Choco.makeIntVar("u5", 0, 1, new String[]{Options.V_ENUM});
-			
+				
 
 				// DIFFERENT: Add constraint by letter
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(d, d), u0), Choco.plus(t, Choco.mult(u1, 10))));
@@ -45,6 +45,10 @@ public class ExDonaldGeraldRobert {
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(o, e), u4), Choco.plus(o, Choco.mult(u5, 10))));
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(d, g), u5), Choco.plus(r, Choco.mult(u0, 10))));
 
+				//donald
+				//gerald
+				//robert
+				
 				// Add constraint of all different letters.
 				model.addConstraint(Choco.allDifferent(d, o, n, a, l, g, e, r, b, t));
 
@@ -56,6 +60,7 @@ public class ExDonaldGeraldRobert {
 				System.out.println("Laufzeit in ms: " + (System.currentTimeMillis() - start));
 				System.out.println("############################");
 
+				
 				
 				ArrayList<IntegerVariable> donald =  new ArrayList<IntegerVariable>(){{add(d);add(o);add(n);add(a);add(l);add(d);}};
 				
