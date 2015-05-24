@@ -1,9 +1,10 @@
+import java.util.ArrayList;
+
 import choco.Choco;
 import choco.Options;
 import choco.cp.model.CPModel;
 import choco.cp.solver.CPSolver;
 import choco.kernel.model.Model;
-import choco.kernel.model.variables.integer.IntegerExpressionVariable;
 import choco.kernel.model.variables.integer.IntegerVariable;
 import choco.kernel.solver.Solver;
 
@@ -34,24 +35,7 @@ public class ExDonaldGeraldRobert {
 				IntegerVariable u3 = Choco.makeIntVar("u3", 0, 1, new String[]{Options.V_ENUM});
 				IntegerVariable u4 = Choco.makeIntVar("u4", 0, 1, new String[]{Options.V_ENUM});
 				IntegerVariable u5 = Choco.makeIntVar("u5", 0, 1, new String[]{Options.V_ENUM});
-
-				// Declare every name as a variable
-				IntegerVariable donald = Choco.makeIntVar("donald", 0, 1000000, new String[]{Options.V_BOUND});
-				IntegerVariable gerald = Choco.makeIntVar("gerald", 0, 1000000, new String[]{Options.V_BOUND});
-				IntegerVariable robert = Choco.makeIntVar("robert", 0, 1000000, new String[]{Options.V_BOUND});
-
-				// Array of coefficients
-				int[] c = new int[] { 100000, 10000, 1000, 100, 10, 1 };
-
-				// Declare every combination of letter as an integer expression
-				IntegerExpressionVariable donaldLetters = Choco.scalar(new IntegerVariable[] { d, o, n, a, l, d }, c);
-				IntegerExpressionVariable geraldLetters = Choco.scalar(new IntegerVariable[] { g, e, r, a, l, d }, c);
-				IntegerExpressionVariable robertLetters = Choco.scalar(new IntegerVariable[] { r, o, b, e, r, t }, c);
-
-				// Add equality between name and letters combination
-				model.addConstraint(Choco.eq(donaldLetters, donald));
-				model.addConstraint(Choco.eq(geraldLetters, gerald));
-				model.addConstraint(Choco.eq(robertLetters, robert));
+			
 
 				// DIFFERENT: Add constraint by letter
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(d, d), u0), Choco.plus(t, Choco.mult(u1, 10))));
@@ -62,7 +46,7 @@ public class ExDonaldGeraldRobert {
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(d, g), u5), Choco.plus(r, Choco.mult(u0, 10))));
 
 				// Add constraint of all different letters.
-				model.addConstraint(Choco.allDifferent(new IntegerVariable[]{d, o, n, a, l, g, e, r, b, t}));
+				model.addConstraint(Choco.allDifferent(d, o, n, a, l, g, e, r, b, t));
 
 				// Build a solver, read the model and solve it
 				Solver s = new CPSolver();
@@ -72,10 +56,32 @@ public class ExDonaldGeraldRobert {
 				System.out.println("Laufzeit in ms: " + (System.currentTimeMillis() - start));
 				System.out.println("############################");
 
-				// Print name value
-				System.out.println("donald = " + s.getVar(donald).getVal());
-				System.out.println("gerald = " + s.getVar(gerald).getVal());
-				System.out.println("robert = " + s.getVar(robert).getVal());
+				
+				ArrayList<IntegerVariable> donald =  new ArrayList<IntegerVariable>(){{add(d);add(o);add(n);add(a);add(l);add(d);}};
+				
+				System.out.print("Donald = ");
+				for(IntegerVariable letter : donald){
+					System.out.print(s.getVar(letter).getVal());
+				}
+				System.out.println("");
+				
+                ArrayList<IntegerVariable> gerald =  new ArrayList<IntegerVariable>(){{add(g);add(e);add(r);add(a);add(l);add(d);}};
+				
+				System.out.print("Gerald = ");
+				for(IntegerVariable letter : gerald){
+					System.out.print(s.getVar(letter).getVal());
+				}
+				System.out.println("");
+				
+                ArrayList<IntegerVariable> robert =  new ArrayList<IntegerVariable>(){{add(r);add(o);add(b);add(e);add(r);add(t);}};
+				
+				System.out.print("Robert = ");
+				for(IntegerVariable letter : robert){
+					System.out.print(s.getVar(letter).getVal());
+				
+				}
+				
+				
 		
 	}
 	
