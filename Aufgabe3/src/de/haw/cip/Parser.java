@@ -15,14 +15,14 @@ class Parser {
 	 private static final int DEBUGGER_PORT = 48000; 
 	
 	public static void main(String args[]) throws Exception {
-		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/aau759/Desktop/CIP3/Aufgabe3/ANTL/test.txt", "UTF8"));
+		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/aau759/Desktop/CIP33/Aufgabe3/ANTL/test.txt", "UTF8"));
 		CommonTokenStream tokens = new CommonTokenStream(lex);
 		
 		//default
-		//DSLParser parser = new DSLParser(tokens);
+		DSLParser parser = new DSLParser(tokens);
 		
 		//run at port DEBUGGER_PORT
-		DSLParser parser = new DSLParser(tokens, DEBUGGER_PORT,new RecognizerSharedState()); 
+		//DSLParser parser = new DSLParser(tokens, DEBUGGER_PORT,new RecognizerSharedState()); 
 		
 		DSLParser.riddle_return r = parser.riddle();
 		
