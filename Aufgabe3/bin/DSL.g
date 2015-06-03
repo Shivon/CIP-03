@@ -1,6 +1,7 @@
 grammar DSL;
 
 options { 
+  ASTLabelType=CommonTree;
   output=AST;
 }
 

@@ -1,5 +1,3 @@
-package output;
-
 import java.io.*;
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
@@ -11,7 +9,7 @@ import output.*;
 public class __Test__ {
 
     public static void main(String args[]) throws Exception {
-        DSLLexer lex = new DSLLexer(new ANTLRFileStream("C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\output\\__Test___input.txt", "UTF8"));
+        DSLLexer lex = new DSLLexer(new ANTLRFileStream("C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\output\\__Test___input.txt", "UTF8"));
         CommonTokenStream tokens = new CommonTokenStream(lex);
 
 

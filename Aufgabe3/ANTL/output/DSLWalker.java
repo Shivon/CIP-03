@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g 2015-05-23 17:59:38
+// $ANTLR 3.4 C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g 2015-06-03 15:45:00
 package output;
 
 import org.antlr.runtime.*;
@@ -34,7 +34,7 @@ public class DSLWalker extends DebugTreeParser {
 
 
 public static final String[] ruleNames = new String[] {
-    "invalidRule", "block", "riddle", "exercise"
+    "invalidRule", "riddle", "exercise", "block"
 };
 
 public static final boolean[] decisionCanBacktrack = new boolean[] {
@@ -92,7 +92,7 @@ public TreeAdaptor getTreeAdaptor() {
 }
 
     public String[] getTokenNames() { return DSLWalker.tokenNames; }
-    public String getGrammarFileName() { return "C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g"; }
 
 
     public static class riddle_return extends TreeRuleReturnScope {
@@ -102,7 +102,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "riddle"
-    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:13:1: riddle : exercise exercise exercise exercise exercise exercise ;
+    // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:1: riddle : exercise exercise exercise exercise exercise exercise ;
     public final DSLWalker.riddle_return riddle() throws RecognitionException {
         DSLWalker.riddle_return retval = new DSLWalker.riddle_return();
         retval.start = input.LT(1);
@@ -130,65 +130,65 @@ public TreeAdaptor getTreeAdaptor() {
         try { dbg.enterRule(getGrammarFileName(), "riddle");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(13, 0);
+        dbg.location(19, 0);
 
         try {
-            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:13:9: ( exercise exercise exercise exercise exercise exercise )
+            // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:8: ( exercise exercise exercise exercise exercise exercise )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:13:11: exercise exercise exercise exercise exercise exercise
+            // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:10: exercise exercise exercise exercise exercise exercise
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            dbg.location(13,11);
+            dbg.location(19,10);
             _last = (CommonTree)input.LT(1);
-            pushFollow(FOLLOW_exercise_in_riddle48);
+            pushFollow(FOLLOW_exercise_in_riddle64);
             exercise1=exercise();
 
             state._fsp--;
 
             adaptor.addChild(root_0, exercise1.getTree());
 
-            dbg.location(13,20);
+            dbg.location(19,19);
             _last = (CommonTree)input.LT(1);
-            pushFollow(FOLLOW_exercise_in_riddle50);
+            pushFollow(FOLLOW_exercise_in_riddle66);
             exercise2=exercise();
 
             state._fsp--;
 
             adaptor.addChild(root_0, exercise2.getTree());
 
-            dbg.location(13,29);
+            dbg.location(19,28);
             _last = (CommonTree)input.LT(1);
-            pushFollow(FOLLOW_exercise_in_riddle52);
+            pushFollow(FOLLOW_exercise_in_riddle68);
             exercise3=exercise();
 
             state._fsp--;
 
             adaptor.addChild(root_0, exercise3.getTree());
 
-            dbg.location(13,38);
+            dbg.location(19,37);
             _last = (CommonTree)input.LT(1);
-            pushFollow(FOLLOW_exercise_in_riddle54);
+            pushFollow(FOLLOW_exercise_in_riddle70);
             exercise4=exercise();
 
             state._fsp--;
 
             adaptor.addChild(root_0, exercise4.getTree());
 
-            dbg.location(13,47);
+            dbg.location(19,46);
             _last = (CommonTree)input.LT(1);
-            pushFollow(FOLLOW_exercise_in_riddle56);
+            pushFollow(FOLLOW_exercise_in_riddle72);
             exercise5=exercise();
 
             state._fsp--;
 
             adaptor.addChild(root_0, exercise5.getTree());
 
-            dbg.location(13,56);
+            dbg.location(19,55);
             _last = (CommonTree)input.LT(1);
-            pushFollow(FOLLOW_exercise_in_riddle58);
+            pushFollow(FOLLOW_exercise_in_riddle74);
             exercise6=exercise();
 
             state._fsp--;
@@ -209,7 +209,7 @@ public TreeAdaptor getTreeAdaptor() {
         finally {
         	// do for sure before leaving
         }
-        dbg.location(13, 63);
+        dbg.location(19, 62);
 
         }
         finally {
@@ -230,7 +230,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "exercise"
-    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:15:1: exercise : ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) );
+    // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:20:1: exercise : ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) );
     public final DSLWalker.exercise_return exercise() throws RecognitionException {
         DSLWalker.exercise_return retval = new DSLWalker.exercise_return();
         retval.start = input.LT(1);
@@ -268,10 +268,10 @@ public TreeAdaptor getTreeAdaptor() {
         try { dbg.enterRule(getGrammarFileName(), "exercise");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(15, 0);
+        dbg.location(20, 0);
 
         try {
-            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:15:10: ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) )
+            // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:20:10: ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) )
             int alt1=2;
             try { dbg.enterDecision(1, decisionCanBacktrack[1]);
 
@@ -321,20 +321,20 @@ public TreeAdaptor getTreeAdaptor() {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:15:13: ^( EQUAL ^( ADD block block ) block )
+                    // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:20:17: ^( EQUAL ^( ADD block block ) block )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    dbg.location(15,13);
+                    dbg.location(20,17);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_1 = _last;
                     CommonTree _first_1 = null;
                     CommonTree root_1 = (CommonTree)adaptor.nil();
-                    dbg.location(15,15);
+                    dbg.location(20,19);
                     _last = (CommonTree)input.LT(1);
-                    EQUAL7=(CommonTree)match(input,EQUAL,FOLLOW_EQUAL_in_exercise68); 
+                    EQUAL7=(CommonTree)match(input,EQUAL,FOLLOW_EQUAL_in_exercise87); 
                     EQUAL7_tree = (CommonTree)adaptor.dupNode(EQUAL7);
 
 
@@ -342,15 +342,15 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(15,21);
+                    dbg.location(20,25);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_2 = _last;
                     CommonTree _first_2 = null;
                     CommonTree root_2 = (CommonTree)adaptor.nil();
-                    dbg.location(15,23);
+                    dbg.location(20,27);
                     _last = (CommonTree)input.LT(1);
-                    ADD8=(CommonTree)match(input,ADD,FOLLOW_ADD_in_exercise71); 
+                    ADD8=(CommonTree)match(input,ADD,FOLLOW_ADD_in_exercise90); 
                     ADD8_tree = (CommonTree)adaptor.dupNode(ADD8);
 
 
@@ -358,18 +358,18 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(15,27);
+                    dbg.location(20,31);
                     _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_block_in_exercise73);
+                    pushFollow(FOLLOW_block_in_exercise92);
                     block9=block();
 
                     state._fsp--;
 
                     adaptor.addChild(root_2, block9.getTree());
 
-                    dbg.location(15,33);
+                    dbg.location(20,37);
                     _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_block_in_exercise75);
+                    pushFollow(FOLLOW_block_in_exercise94);
                     block10=block();
 
                     state._fsp--;
@@ -382,9 +382,9 @@ public TreeAdaptor getTreeAdaptor() {
                     _last = _save_last_2;
                     }
 
-                    dbg.location(15,40);
+                    dbg.location(20,44);
                     _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_block_in_exercise78);
+                    pushFollow(FOLLOW_block_in_exercise97);
                     block11=block();
 
                     state._fsp--;
@@ -403,45 +403,45 @@ public TreeAdaptor getTreeAdaptor() {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:16:6: ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block )
+                    // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:21:19: ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block )
                     {
-                    dbg.location(16,6);
+                    dbg.location(21,19);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_1 = _last;
                     CommonTree _first_1 = null;
                     CommonTree root_1 = (CommonTree)adaptor.nil();
-                    dbg.location(16,8);
+                    dbg.location(21,21);
                     _last = (CommonTree)input.LT(1);
-                    EQUAL12=(CommonTree)match(input,EQUAL,FOLLOW_EQUAL_in_exercise87);  
+                    EQUAL12=(CommonTree)match(input,EQUAL,FOLLOW_EQUAL_in_exercise119);  
                     stream_EQUAL.add(EQUAL12);
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(16,14);
+                    dbg.location(21,27);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_2 = _last;
                     CommonTree _first_2 = null;
                     CommonTree root_2 = (CommonTree)adaptor.nil();
-                    dbg.location(16,16);
+                    dbg.location(21,29);
                     _last = (CommonTree)input.LT(1);
-                    SUB13=(CommonTree)match(input,SUB,FOLLOW_SUB_in_exercise90);  
+                    SUB13=(CommonTree)match(input,SUB,FOLLOW_SUB_in_exercise122);  
                     stream_SUB.add(SUB13);
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(16,23);
+                    dbg.location(21,36);
                     _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_block_in_exercise94);
+                    pushFollow(FOLLOW_block_in_exercise126);
                     bl1=block();
 
                     state._fsp--;
 
                     stream_block.add(bl1.getTree());
-                    dbg.location(16,33);
+                    dbg.location(21,46);
                     _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_block_in_exercise98);
+                    pushFollow(FOLLOW_block_in_exercise130);
                     bl2=block();
 
                     state._fsp--;
@@ -453,9 +453,9 @@ public TreeAdaptor getTreeAdaptor() {
                     _last = _save_last_2;
                     }
 
-                    dbg.location(16,44);
+                    dbg.location(21,57);
                     _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_block_in_exercise103);
+                    pushFollow(FOLLOW_block_in_exercise135);
                     bl3=block();
 
                     state._fsp--;
@@ -482,34 +482,34 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 16:52: -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
+                    // 21:65: -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
                     {
-                        dbg.location(16,55);
-                        // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:16:55: ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
+                        dbg.location(21,68);
+                        // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:21:68: ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
-                        dbg.location(16,57);
+                        dbg.location(21,70);
                         root_1 = (CommonTree)adaptor.becomeRoot(
                         stream_EQUAL.nextNode()
                         , root_1);
 
-                        dbg.location(16,63);
-                        // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:16:63: ^( ADD[\"+\"] $bl3 $bl2)
+                        dbg.location(21,76);
+                        // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:21:76: ^( ADD[\"+\"] $bl3 $bl2)
                         {
                         CommonTree root_2 = (CommonTree)adaptor.nil();
-                        dbg.location(16,65);
+                        dbg.location(21,78);
                         root_2 = (CommonTree)adaptor.becomeRoot(
                         (CommonTree)adaptor.create(ADD, "+")
                         , root_2);
 
-                        dbg.location(16,75);
+                        dbg.location(21,88);
                         adaptor.addChild(root_2, stream_bl3.nextTree());
-                        dbg.location(16,80);
+                        dbg.location(21,93);
                         adaptor.addChild(root_2, stream_bl2.nextTree());
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        dbg.location(16,86);
+                        dbg.location(21,99);
                         adaptor.addChild(root_1, stream_bl1.nextTree());
 
                         adaptor.addChild(root_0, root_1);
@@ -535,7 +535,7 @@ public TreeAdaptor getTreeAdaptor() {
         finally {
         	// do for sure before leaving
         }
-        dbg.location(17, 3);
+        dbg.location(22, 0);
 
         }
         finally {
@@ -556,7 +556,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "block"
-    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:1: block : ^( BLOCK ( SYMBOL )+ ) ;
+    // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:23:1: block : ^( BLOCK ( SYMBOL )+ ) ;
     public final DSLWalker.block_return block() throws RecognitionException {
         DSLWalker.block_return retval = new DSLWalker.block_return();
         retval.start = input.LT(1);
@@ -576,26 +576,26 @@ public TreeAdaptor getTreeAdaptor() {
         try { dbg.enterRule(getGrammarFileName(), "block");
         if ( getRuleLevel()==0 ) {dbg.commence();}
         incRuleLevel();
-        dbg.location(19, 0);
+        dbg.location(23, 0);
 
         try {
-            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:8: ( ^( BLOCK ( SYMBOL )+ ) )
+            // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:23:7: ( ^( BLOCK ( SYMBOL )+ ) )
             dbg.enterAlt(1);
 
-            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:11: ^( BLOCK ( SYMBOL )+ )
+            // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:23:9: ^( BLOCK ( SYMBOL )+ )
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            dbg.location(19,11);
+            dbg.location(23,9);
             _last = (CommonTree)input.LT(1);
             {
             CommonTree _save_last_1 = _last;
             CommonTree _first_1 = null;
             CommonTree root_1 = (CommonTree)adaptor.nil();
-            dbg.location(19,13);
+            dbg.location(23,11);
             _last = (CommonTree)input.LT(1);
-            BLOCK14=(CommonTree)match(input,BLOCK,FOLLOW_BLOCK_in_block139); 
+            BLOCK14=(CommonTree)match(input,BLOCK,FOLLOW_BLOCK_in_block165); 
             BLOCK14_tree = (CommonTree)adaptor.dupNode(BLOCK14);
 
 
@@ -603,8 +603,8 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             match(input, Token.DOWN, null); 
-            dbg.location(19,19);
-            // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:19: ( SYMBOL )+
+            dbg.location(23,17);
+            // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:23:17: ( SYMBOL )+
             int cnt2=0;
             try { dbg.enterSubRule(2);
 
@@ -626,11 +626,11 @@ public TreeAdaptor getTreeAdaptor() {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // C:\\Users\\Timo\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:19:19: SYMBOL
+            	    // C:\\Users\\aau759\\Desktop\\CIP3\\Aufgabe3\\ANTL\\DSLWalker.g:23:17: SYMBOL
             	    {
-            	    dbg.location(19,19);
+            	    dbg.location(23,17);
             	    _last = (CommonTree)input.LT(1);
-            	    SYMBOL15=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_block141); 
+            	    SYMBOL15=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_block167); 
             	    SYMBOL15_tree = (CommonTree)adaptor.dupNode(SYMBOL15);
 
 
@@ -672,7 +672,7 @@ public TreeAdaptor getTreeAdaptor() {
         finally {
         	// do for sure before leaving
         }
-        dbg.location(19, 26);
+        dbg.location(23, 24);
 
         }
         finally {
@@ -690,23 +690,23 @@ public TreeAdaptor getTreeAdaptor() {
 
  
 
-    public static final BitSet FOLLOW_exercise_in_riddle48 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_exercise_in_riddle50 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_exercise_in_riddle52 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_exercise_in_riddle54 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_exercise_in_riddle56 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_exercise_in_riddle58 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUAL_in_exercise68 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ADD_in_exercise71 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_block_in_exercise73 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_block_in_exercise75 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_block_in_exercise78 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_exercise_in_riddle64 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_exercise_in_riddle66 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_exercise_in_riddle68 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_exercise_in_riddle70 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_exercise_in_riddle72 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_exercise_in_riddle74 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_EQUAL_in_exercise87 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SUB_in_exercise90 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_block_in_exercise94 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_block_in_exercise98 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_block_in_exercise103 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_BLOCK_in_block139 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SYMBOL_in_block141 = new BitSet(new long[]{0x0000000000000208L});
+    public static final BitSet FOLLOW_ADD_in_exercise90 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_block_in_exercise92 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_block_in_exercise94 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_block_in_exercise97 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_EQUAL_in_exercise119 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SUB_in_exercise122 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_block_in_exercise126 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_block_in_exercise130 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_block_in_exercise135 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_BLOCK_in_block165 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SYMBOL_in_block167 = new BitSet(new long[]{0x0000000000000208L});
 
 }
