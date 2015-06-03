@@ -12,7 +12,7 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 
 class Parser {
 	
-	 private static final int DEBUGGER_PORT = 48000; 
+	private static final int DEBUGGER_PORT = 48000; 
 	
 	public static void main(String args[]) throws Exception {
 		// /Users/aau759/Desktop/CIP33/Aufgabe3/ANTL/test.txt
