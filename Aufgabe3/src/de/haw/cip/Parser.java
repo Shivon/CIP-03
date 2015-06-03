@@ -15,7 +15,9 @@ class Parser {
 	 private static final int DEBUGGER_PORT = 48000; 
 	
 	public static void main(String args[]) throws Exception {
-		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/aau759/Desktop/CIP33/Aufgabe3/ANTL/test.txt", "UTF8"));
+		// /Users/aau759/Desktop/CIP33/Aufgabe3/ANTL/test.txt
+		// /Users/KamikazeOnRoad/GitHub/CIP-03/Aufgabe3/ANTL/test.txt
+		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/KamikazeOnRoad/GitHub/CIP-03/Aufgabe3/ANTL/test.txt", "UTF8"));
 		CommonTokenStream tokens = new CommonTokenStream(lex);
 		
 		//default
