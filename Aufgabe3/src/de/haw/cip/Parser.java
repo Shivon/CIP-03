@@ -6,15 +6,24 @@ import output.DSLParser;
 
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.RecognizerSharedState;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 
 class Parser {
+	
+	 private static final int DEBUGGER_PORT = 48000; 
+	
 	public static void main(String args[]) throws Exception {
-		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/Timo/Desktop/CIP3/Aufgabe3/ANTL/test.txt", "UTF8"));
+		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/aau759/Desktop/CIP3/Aufgabe3/ANTL/test.txt", "UTF8"));
 		CommonTokenStream tokens = new CommonTokenStream(lex);
 		
-		DSLParser parser = new DSLParser(tokens);
+		//default
+		//DSLParser parser = new DSLParser(tokens);
+		
+		//run at port DEBUGGER_PORT
+		DSLParser parser = new DSLParser(tokens, DEBUGGER_PORT,new RecognizerSharedState()); 
+		
 		DSLParser.riddle_return r = parser.riddle();
 		
 		CommonTree walkerTree = (CommonTree) r.getTree();
@@ -22,20 +31,6 @@ class Parser {
 		DSLWalker walker = new DSLWalker(nodes);
 		walker.riddle();
 		
-		
-		/*
-		CommonTreeNodeStream nodes = new CommonTreeNodeStream(r.getTree());
-		DSLWalker walker = new DSLWalker(nodes);
-
-		try {
-			CommonTree walkerTree = (CommonTree) walker.riddle().getTree();
-			DOTTreeGenerator gen = new DOTTreeGenerator();
-			StringTemplate walkerTemplate = gen.toDOT(walkerTree);
-			System.out.println(walkerTemplate);
-		} catch (RecognitionException e) {
-			e.printStackTrace();
-		}
-		
-		*/
+	
 	}
 }
