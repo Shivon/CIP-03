@@ -17,7 +17,7 @@ class Parser {
 	public static void main(String args[]) throws Exception {
 		// /Users/aau759/Desktop/CIP33/Aufgabe3/ANTL/test.txt
 		// /Users/KamikazeOnRoad/GitHub/CIP-03/Aufgabe3/ANTL/test.txt
-		DSLLexer lex = new DSLLexer(new ANTLRFileStream("/Users/KamikazeOnRoad/GitHub/CIP-03/Aufgabe3/ANTL/test.txt", "UTF8"));
+		DSLLexer lex = new DSLLexer(new ANTLRFileStream("test.txt", "UTF8"));
 		CommonTokenStream tokens = new CommonTokenStream(lex);
 		
 		//default
@@ -31,7 +31,9 @@ class Parser {
 		CommonTree walkerTree = (CommonTree) r.getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(walkerTree);
 		DSLWalker walker = new DSLWalker(nodes);
-		walker.riddle();
+		System.out.println(walkerTree.toStringTree());
+		System.out.println(((CommonTree)  walker.riddle().getTree()).toStringTree());
+		
 		
 	
 	}
